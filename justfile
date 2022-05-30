@@ -75,3 +75,12 @@ docker-clean-install-17: docker-clean-17
 #docker-full-verify-17: docker-clean-install-17
 #  ${DOCKER_CMD} -v ${VOL_NAME}-17:"${M2_REPO}" -v "$(pwd):${BLD_DIR}" -w ${BLD_DIR} "${IMG}:17" mvn -P-skipSlowTests verify
 
+dependencies:
+  #!/usr/bin/env bash -l
+  sdk use java ${SDKMAN_JAVA_11}
+  mvn dependency:tree -Dscope=compile | tee dependencies.txt
+
+updates:
+  #!/usr/bin/env bash -l
+  sdk use java ${SDKMAN_JAVA_11}
+  mvn versions:display-dependency-updates | tee updates.txt
