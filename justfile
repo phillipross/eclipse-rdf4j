@@ -3,9 +3,9 @@
 # NOTE: The just recipes defined below assume sdkman is installed and used for java and maven selection.
 #       Recipes that utilize docker containers assume the existence of the specific docker image existing locally
 
-export JAVA_VER_DISTRO_11 := "11.0.20-zulu"
-export JAVA_VER_DISTRO_17 := "17.0.8-zulu"
-export JAVA_VER_DISTRO_21 := "21-zulu"
+export JAVA_VER_DISTRO_11 := "11.0.21-zulu"
+export JAVA_VER_DISTRO_17 := "17.0.9-zulu"
+export JAVA_VER_DISTRO_21 := "21.0.1-zulu"
 export DOCKER_CMD := "docker container run --rm -it"
 export VOL_NAME := "eclipse-rdf4j"
 export M2_REPO := "/root/.m2/repository"
